@@ -82,7 +82,10 @@
 	      	            !execution(* getPK(..))" />  	            
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />	
 	  -->
-	
+	<alias name="defaultStadiumService" alias="stadiumService"/>
+	<bean id="defaultStadiumService" class="de.hybris.platform.cuppytrail.impl.DefaultStadiumService">
+		<property name="stadiumDAO" ref="stadiumDAO"/>
+	</bean>
 			
 			
 </beans>
