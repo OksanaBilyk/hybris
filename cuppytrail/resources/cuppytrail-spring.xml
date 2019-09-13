@@ -86,6 +86,11 @@
 	<bean id="defaultStadiumService" class="de.hybris.platform.cuppytrail.impl.DefaultStadiumService">
 		<property name="stadiumDAO" ref="stadiumDAO"/>
 	</bean>
+
+	<alias name="defaultStadiumFacade" alias="stadiumFacade"/>
+	<bean id="defaultStadiumFacade" class="de.hybris.platform.cuppytrail.facades.impl.DefaultStadiumFacade">
+		<property name="stadiumService" ref="stadiumService" />
+	</bean>
 			
 			
 </beans>
