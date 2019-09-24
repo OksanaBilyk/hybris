@@ -22,5 +22,8 @@ public interface StadiumService
     * in case no stadium for given code can be found
     */
     StadiumModel getStadiumForCode(String code);
-     
+
+    void deleteStadiumForCode(String code);
+
+    void deleteAllStadiums();
 }

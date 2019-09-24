@@ -27,4 +27,8 @@ public interface StadiumDAO
      * @return All stadiums with the given code.
      */
     List<StadiumModel> findStadiumsByCode(String code);
+
+    StadiumModel getStadiumByName(String code);
+
+//    void removeStadiumByCode(String code);
 }

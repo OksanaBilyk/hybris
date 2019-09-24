@@ -10,5 +10,8 @@ public interface StadiumFacade
     StadiumData getStadium(String name);
  
     List<StadiumData> getStadiums();
- 
+
+    void deleteStadiumForCode(String name);
+
+    void deleteAllStadiums();
 }
