@@ -94,6 +94,10 @@
 	</bean>
 
 	<bean id="sendRankingJob" class="de.hybris.platform.cuppytrail.jobs.SendRankingJob" autowire="byName"/>
-			
+
+    <bean id="deleteAllStadiumsJob" class="de.hybris.platform.cuppytrail.jobs.DeleteAllStadiumsJob" autowire="byName"/>
+
+	<bean id="addStadiumsFromImpexJob" class="de.hybris.platform.cuppytrail.jobs.AddStadiumsFromImpexJob" autowire="byName"/>
+
 			
 </beans>
