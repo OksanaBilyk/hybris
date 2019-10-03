@@ -99,5 +99,17 @@
 
 	<bean id="addStadiumsFromImpexJob" class="de.hybris.platform.cuppytrail.jobs.AddStadiumsFromImpexJob" autowire="byName"/>
 
+	<bean id="stadiumCapacityInterceptor" class="de.hybris.platform.cuppytrail.interceptors.StadiumCapacityInterceptor"/>
+
+	<bean id="StadiumInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="stadiumCapacityInterceptor" />
+		<property name="typeCode" value="Stadium" />
+	</bean>
+
+	<bean id="stadiumListener" class="de.hybris.platform.cuppytrail.events.StadiumEventListener">
+		<property name="tenantService" ref="defaultTenantService"/>
+		<property name="clusterService" ref="defaultClusterService"/>
+	</bean>
+
 			
 </beans>
