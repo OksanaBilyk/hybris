@@ -111,5 +111,23 @@
 		<property name="clusterService" ref="defaultClusterService"/>
 	</bean>
 
+	<bean id="registrationConfirmationActionJob" class="de.hybris.platform.cuppytrail.workflow.RegistrationConfirmationActionJob" >
+		<property name="modelService" ref="modelService" />
+		<property name="mailService" ref="mailService" />
+	</bean>
+
+	<bean id="registrationDeclineActionJob" class="de.hybris.platform.cuppytrail.workflow.RegistrationDeclineActionJob" >
+		<property name="modelService" ref="modelService" />
+		<property name="mailService" ref="mailService" />
+	</bean>
+
+	<bean id="playerVoidInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="VoidInterceptor" />
+		<property name="typeCode" value="Player" />
+		<property name="replacedInterceptors" ref="playerConfirmedInterceptor"/>
+	</bean>
+
+	<bean id="playerService" class="de.hybris.platform.cuppytrail.impl.CuppytrailPlayerService" />
+
 			
 </beans>
