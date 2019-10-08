@@ -66,6 +66,15 @@
 			</attributes>
 		</itemtype>
 
+		<itemtype code="MatchBet" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="matchScore" type="java.lang.Integer" >
+					<persistence type="dynamic" attributeHandler="matchBetScoreAttributeHandler"/>
+					<modifiers read="true" write="false"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+
 
 	</itemtypes>
 </items>
