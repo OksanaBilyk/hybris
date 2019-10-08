@@ -13,6 +13,7 @@
                 <li>
                     <a href="./stadiums/${stadium.name}">${stadium.name} </a> <a href="./deleteStadium/${stadium.name}"
                                                                                  style="color:blue">Remove</a>
+                    <img style="margin-left:20px;vertical-align:top;margin-bottom:20px" src="${stadium.imageUrl}"/>
                 </li>
             </c:forEach>
 

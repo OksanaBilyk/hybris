@@ -27,6 +27,8 @@ public class DefaultStadiumFacadeUnitTest
  
     private final static String STADIUM_NAME = "wembley";
     private final static Integer STADIUM_CAPACITY = Integer.valueOf(12345);
+    private final static String STADIUM_IMAGE_URL = "dummyImageUrl";
+    private final static String IMAGE_FORMAT = "dummyFormat";
  
     // Convenience method for returning a list of Stadium
     private List<StadiumModel> dummyDataStadiumList()
@@ -111,7 +113,7 @@ public class DefaultStadiumFacadeUnitTest
          * getStadiums, Mockito will return the stadiums instance to it. Mockito will also remember that the call was
          * made.
          */
-        final List<StadiumData> dto = stadiumFacade.getStadiums();
+        final List<StadiumData> dto = stadiumFacade.getStadiums(IMAGE_FORMAT);
         // We now check that dto is a DTO version of stadiums..
         assertNotNull(dto);
         assertEquals(stadiums.size(), dto.size());
@@ -136,7 +138,7 @@ public class DefaultStadiumFacadeUnitTest
          * We now make the call to StadiumFacade's getStadium. If within this method a call is made to StadiumService's
          * getStadium, Mockito will return the wembley instance to it. Mockito will also remember that the call was made.
          */
-        final StadiumData stadium = stadiumFacade.getStadium("wembley");
+        final StadiumData stadium = stadiumFacade.getStadium("wembley", IMAGE_FORMAT);
         // We now check that stadium is a correct DTO representation of the ServiceModel wembley
         assertEquals(wembley.getCode(), stadium.getName());
         assertEquals(wembley.getCapacity().toString(), stadium.getCapacity());
