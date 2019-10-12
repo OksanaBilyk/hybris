@@ -129,5 +129,26 @@
 
 	<bean id="playerService" class="de.hybris.platform.cuppytrail.impl.CuppytrailPlayerService" />
 
+	<bean id="matchService" class="de.hybris.platform.cuppytrail.CuppytrailMatchService"/>
+
+	<bean id="newsCatalogAwareInterceptor" class="de.hybris.platform.cuppytrail.interceptors.NewsCatalogAwareInterceptor" autowire="byName">
+		<property name="keyGenerator" ref="newsIdGenerator" />
+		<property name="defaultCatalog" value="Default" />
+		<property name="defaultCatalogVersion" value="Online" />
+		<property name="catalogVersionService" ref="catalogVersionService" />
+	</bean>
+
+	<bean id="NewsValidateInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="newsCatalogAwareInterceptor" />
+		<property name="typeCode" value="News" />
+	</bean>
+
+	<bean id="newsIdGenerator" class="de.hybris.platform.servicelayer.keygenerator.impl.PersistentKeyGenerator" init-method="init">
+		<property name="key" value="news_id" />
+		<property name="digits" value="8" />
+		<property name="start" value="00000000" />
+		<property name="numeric" value="true" />
+	</bean>
+
 			
 </beans>
