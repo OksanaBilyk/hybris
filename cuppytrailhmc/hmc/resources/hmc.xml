@@ -7,6 +7,7 @@
     <explorertree>
         <group name="cuppytrailgroup">
             <typeref type="Stadium"/>
+            <typeref type="CuppyTrUser"/>
         </group>
     </explorertree>
 
@@ -68,6 +69,46 @@
                 <attribute name="matchScore"/>
             </itemlayout>
         </defaultreference>
+    </type>
+
+    <type name="CuppyTrUser" mode="append">
+        <organizer>
+            <search mode="replace">
+                <condition attribute="username"/>
+                <condition attribute="login"/>
+                <condition attribute="phone"/>
+            </search>
+            <result mode="replace">
+                <listview>
+                    <itemlayout>
+                        <attribute name="name"/>
+                        <attribute name="username"/>
+                        <attribute name="phone"/>
+                        <attribute name="login"/>
+                        <attribute name="password"/>
+                    </itemlayout>
+                </listview>
+            </result>
+            <editor>
+                <essentials>
+                    <listlayout>
+                        <attribute name="name"/>
+                    </listlayout>
+                </essentials>
+                <tab name="tab.cuppytrail">
+                    <section name="section.cuppytrail">
+                        <listlayout>
+                            <attribute name="username"/>
+                            <attribute name="login"/>
+                            <attribute name="phone"/>
+                            <attribute name="password"/>
+                        </listlayout>
+                    </section>
+                </tab>
+            </editor>
+
+
+        </organizer>
     </type>
 
 </configuration>

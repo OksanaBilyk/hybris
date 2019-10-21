@@ -100,6 +100,70 @@
 			</attributes>
 		</itemtype>
 
+		<itemtype code="CuppyUser" autocreate="true" generate="true"
+							 extends="User">
+		<attributes>
+			<!--				<attribute qualifier="name" type="java.lang.String">-->
+			<!--					<persistence type="property"/>-->
+			<!--					<modifiers optional="false" unique="true"/>-->
+			<!--				</attribute>-->
+			<attribute qualifier="username" type="java.lang.String">
+				<persistence type="property"/>
+				<modifiers optional="true"/>
+			</attribute>
+			<attribute qualifier="phone" type="java.lang.String">
+				<persistence type="property"/>
+				<modifiers optional="true"/>
+			</attribute>
+			<attribute qualifier="login" type="java.lang.String">
+				<persistence type="property"/>
+				<modifiers optional="true"/>
+			</attribute>
+			<!--				<attribute qualifier="password" type="java.lang.String">-->
+			<!--					<persistence type="property"/>-->
+			<!--					<modifiers optional="false"/>-->
+			<!--				</attribute>-->
+
+		</attributes>
+
+	</itemtype>
+
+		<itemtype code="CuppyTrUser" autocreate="true" generate="true">
+			<deployment table="CuppyTrailCuppyTrUser" typecode="10124" />
+			<attributes>
+				<attribute qualifier="name" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers optional="false"/>
+				</attribute>
+				<attribute qualifier="username" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers optional="false" unique="true"/>
+				</attribute>
+				<attribute qualifier="phone" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers optional="false"/>
+				</attribute>
+				<attribute qualifier="login" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers optional="false"/>
+				</attribute>
+				<attribute qualifier="password" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers optional="false"/>
+				</attribute>
+			</attributes>
+
+		</itemtype>
+
+		<itemtype code="Match" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="mark" type="java.lang.Boolean">
+					<persistence type="property"/>
+					<modifiers optional="true"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+
 
 	</itemtypes>
 </items>

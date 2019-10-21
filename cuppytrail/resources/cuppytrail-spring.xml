@@ -150,5 +150,27 @@
 		<property name="numeric" value="true" />
 	</bean>
 
-			
+
+	<alias name="defaultCuppyUserService" alias="cuppyUserService"/>
+	<bean id="defaultCuppyUserService" class="de.hybris.platform.cuppytrail.impl.DefaultCuppyUserService">
+		<property name="cuppyUserDao" ref="cuppyUserDao"/>
+<!--		<property name="modelService" ref="modelService"/>-->
+	</bean>
+
+	<alias name="defaultCuppyUserFacade" alias="cuppyUserFacade"/>
+	<bean id="defaultCuppyUserFacade" class="de.hybris.platform.cuppytrail.facades.impl.DefaultCuppyUserFacade">
+		<property name="cuppyUserService" ref="cuppyUserService" />
+	</bean>
+
+	<bean name="specialMatchService" class="de.hybris.platform.cuppytrail.impl.SpecialMatchService">
+		<property name="specialMatchDao" ref="specialMatchDao"/>
+	</bean>
+
+	<bean name="specialMatchFacade" class="de.hybris.platform.cuppytrail.facades.impl.SpecialMatchFacade">
+		<property name="specialMatchService" ref="specialMatchService"/>
+	</bean>
+
+	<bean id="deleteOldUsersJob" class="de.hybris.platform.cuppytrail.jobs.DeleteOldUsersJob" autowire="byName"/>
+
+
 </beans>
